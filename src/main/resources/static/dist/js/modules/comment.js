@@ -15,7 +15,7 @@ define(function(require, exports, module) {
     require('owo');
 
 	var Authc = require('authc');
-	
+
 	var Comment = {
         name : 'Comment',
         init : function (options) {
@@ -54,30 +54,30 @@ define(function(require, exports, module) {
                 maxHeight: '250px'
             });
         },
-        
+
         onLoad : function () {
         	this.pageCallback(1);
         },
-        
+
         pageCallback: function (pn) {
         	var opts = this.options;
         	var that = this;
-        	
+
         	var $list = $("#chat_container");
         	var html = '';
 
         	J.getJSON(opts.load_url, {pageSize : opts.pageSize, pageNo: pn}, function (ret) {
-        		
+
         		$('#chat_count').html(ret.totalElements);
-        		
+
           		jQuery.each(ret.content, function(i, n) {
     				var item = opts.onLoad.call(this, i, n);
 
     				html += item;
           		});
-        	
+
 	        	$list.empty().append(html);
-	        	
+
 	    		if (ret.size < 1) {
 	    			$list.append('<li><p>还没有评论, 快来占沙发吧!</p></li>');
 	    		}
@@ -86,7 +86,7 @@ define(function(require, exports, module) {
 	    		}
         	});
         },
-        
+
         post: function (toId, pid, text) {
         	var opts = this.options;
         	var that = this;
@@ -100,13 +100,13 @@ define(function(require, exports, module) {
         		layer.msg('请输入内容再提交!', {icon: 2});
         		return false;
         	}
-        	if (text.length > 255) {
-        		layer.msg('内容过长，请输入140以内个字符', {icon: 2});
+        	if (text.length > 2550) {
+        		layer.msg('内容过长，请输入1400以内个字符', {icon: 2});
         		return false;
         	}
-        	
+
         	jQuery.ajax({
-        		url: opts.post_url, 
+        		url: opts.post_url,
         		data: {'toId': toId,'pid': pid, 'text': text},
         		dataType: "json",
         		type :  "POST",
@@ -132,9 +132,9 @@ define(function(require, exports, module) {
         	});
         }
     };
-	
+
 	exports.init = function (opts) {
 		Comment.init(opts);
 	}
-	
+
 });
