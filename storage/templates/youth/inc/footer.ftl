@@ -5,7 +5,7 @@
                 <div class="col-md-3">
                     <nav class="footer-nav">
                         <div class="footer-nav-item footer-nav-logo">
-                            <img src="<@resource src=options['site_logo']/>" alt="mblog" /></br>
+                            <img src="/theme/youth/dist/images/logo/logo3-footer.png" alt="mblog" /></br>
                             <span class="footer-nav-item">
                 <@resource src=options[ 'site_introduce']/></span>
                         </div>

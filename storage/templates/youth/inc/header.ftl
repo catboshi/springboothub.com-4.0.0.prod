@@ -43,10 +43,10 @@
     <div class="modal-dialog top-modal-dialog">
         <div class="modal-content top-modal-content">
             <div class="modal-header top-md-border">
-                <div class="login-logo">
+               <!-- <div class="login-logo">
                     <a class="navbar-brand" href="${base}/">
                         <img src="<@resource src=options['site_logo']/>" /></a>
-                </div>
+                </div> -->
                 <button type="button" class="close close-button" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">搜索一下可能来得更快</h4></div>
             <div class="modal-body top-search">
@@ -98,7 +98,7 @@
             <div class="fr">
                 <div id="zrz-menu-top-banner" class="zrz-menu-in">
                     <ul id="nav-menu" class="zrz-top-banner-menu">
-                        <li id="menu-item-32763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32763">
+                        <li id="menu-item-32763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32763" style="margin-top:5px;">
                             <a href="" data-toggle="modal" data-target="#search-Modal">
                 <span class="top-fa-search">
                   <i class="fa fa-search"></i>
@@ -140,12 +140,11 @@
                 </ul>
                 <ul class="navbar-button list-inline" id="header_user">
           <#if profile??>
-            <@controls name="post">
+            <@controls name="register">
               <li>
                   <a href="${base}/post/editing" class="plus">
                       <i class="icon icon-note"></i>写文章</a>
               </li>
-            </@controls>
               <li class="dropdown">
                   <a href="#" class="user dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
                       <img class="img-circle" src="<@resource src=profile.avatar + '?t=' + .now?time />">
@@ -163,10 +162,11 @@
                           <a href="${base}/logout">退出</a></li>
                   </ul>
               </li>
+	    </@controls>
           <#else>
+	      <@controls name="register">
               <li>
                   <a href="${base}/login" class="btn btn-default btn-sm signup">登录</a></li>
-              <@controls name="register">
                 <li>
                     <a href="${base}/register" class="btn btn-primary btn-sm signup">注册</a></li>
               </@controls>

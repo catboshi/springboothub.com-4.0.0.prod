@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-3 side-right">
-        <div class="panel panel-default widget tops">
+        <div class="panel panel-default widget">
             <div class="panel-heading">
                 <h3 class="panel-title show-hot">热门文章</h3>
             </div>

@@ -83,7 +83,7 @@
             <ul id="chat_container" class="its"></ul>
             <div id="pager" class="text-center"></div>
             <div class="chat_post">
-                <div class="cbox-title">欢迎您，新朋友，感谢参与互动！<span id="chat_reply" style="display:none;">@<i id="chat_to"></i></span>
+                <div class="cbox-title">感谢参与互动！<span id="chat_reply" style="display:none;">@<i id="chat_to"></i></span>
                 </div>
                 <div class="cbox-post">
                     <div class="cbox-input">

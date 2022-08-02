@@ -1,19 +1,6 @@
 <#include "/youth/inc/layout.ftl"/>
 <#assign topId=1 />
 <@layout>
-  <div class="top-bg-img hidden-xs">
-      <div class="item scroll">
-            <!-- banner 默认风格 -->
-            <img class="scroll-image" src="/theme/youth/dist/images/top-bg-img.png">
-            <img class="scroll-image" src="/theme/youth/dist/images/top-bg-img.png">
-          <div class="top-bg-title">
-              <h1>
-          <@resource src=options[ 'site_title_1']/></h1>
-              <h3>
-          <@resource src=options[ 'site_title_2']/></h3>
-          </div>
-      </div>
-  </div>
   <div class="side-top">
       <!-- top -->
     <@contents channelId=topId size=5>
