@@ -85,7 +85,8 @@ public class UploadController extends BaseController {
                 int height = ServletRequestUtils.getIntParameter(request, "height", imageSize[1]);
                 path = storageFactory.get().storeScale(file, Consts.thumbnailPath, width, height);
             } else {
-                path = storageFactory.get().storeScale(file, Consts.thumbnailPath, size);
+//                path = storageFactory.get().storeScale(file, Consts.thumbnailPath, size);
+                path = storageFactory.get().store(file, Consts.thumbnailPath);//不压缩图片
             }
             result.ok(errorInfo.get("SUCCESS"));
             result.setName(fileName);
